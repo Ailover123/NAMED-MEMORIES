@@ -25,13 +25,12 @@
             </intent-filter>
         </activity>
 
-<!--
-        &lt;!&ndash; SetupActivity &ndash;&gt;
+
         <activity
             android:name=".activities.SetupActivity"
             android:exported="false"
             android:theme="@style/Theme.NAMEDMEMORIES" />
-
+<!-->
         &lt;!&ndash; HomeActivity &ndash;&gt;
         <activity
             android:name=".activities.HomeActivity"

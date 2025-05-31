@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
 <resources>
-
-    <style name="Theme.NAMEDMEMORIES" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.NAMEDMEMORIES" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 </resources>
