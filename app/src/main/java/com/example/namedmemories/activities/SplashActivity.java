@@ -1,6 +1,6 @@
 // activities/SplashActivity.java
 package com.example.namedmemories.activities;
-
+import com.example.namedmemories.R ;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
