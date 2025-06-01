@@ -34,20 +34,13 @@
         android:inputType="text"
         android:minHeight="48dp" />
 
-    <Button
-        android:id="@+id/continueButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Continue"
-        android:layout_marginTop="15dp"
-        tools:ignore="VisualLintButtonSize" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Save and Continue"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="15dp" />
 
 
 
