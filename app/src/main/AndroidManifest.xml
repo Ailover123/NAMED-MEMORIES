@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.namedmemories">
 
+    <!-- Required for accessing local and cloud media on Android 13+ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- For backward compatibility (Android 12 and below) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NAMEDMEMORIES"
-        tools:targetApi="31">
+        tools:targetApi="34">
 
         <!-- SplashActivity is the launcher -->
         <activity
@@ -25,7 +32,6 @@
             </intent-filter>
         </activity>
 
-
         <activity
             android:name=".activities.SetupActivity"
             android:exported="false"
@@ -35,8 +41,5 @@
             android:name=".activities.HomeActivity"
             android:exported="false"
             android:theme="@style/Theme.NAMEDMEMORIES" />
--->
-
     </application>
-
 </manifest>
