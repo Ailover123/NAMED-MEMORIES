@@ -2,17 +2,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:padding="24dp"
     tools:ignore="ExtraText">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profileImage"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/ic_person"
         android:contentDescription="@string/profile_picture"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        app:shapeAppearanceOverlay="@style/CircleImage"
         android:background="@drawable/circle_bg"
         android:padding="10dp"
         android:clickable="true"
