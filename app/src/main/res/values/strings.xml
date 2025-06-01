@@ -2,4 +2,8 @@
     <string name="app_name">NAMED MEMORIES</string>
     <string name="app_logo">App logo</string>
     <string name="App_Name">Named Memories</string>
+    <string name="Profilepic_Hint">Tap to select a profile picture</string>
+    <string name="Username_hint">Enter your name</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="Button_context">Save and Continue</string>
 </resources>
