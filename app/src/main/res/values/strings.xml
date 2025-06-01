@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NAMED MEMORIES</string>
+    <string name="app_logo">App logo</string>
+    <string name="App_Name">Named Memories</string>
 </resources>
