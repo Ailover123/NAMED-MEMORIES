@@ -11,14 +11,13 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.widget.Toast;
 import com.example.namedmemories.R;
 
 public class SetupActivity extends AppCompatActivity {
 
     private ImageView profileImage;
     private EditText nameInput;
-    private Button saveButton;
     private Uri selectedImageUri;
 
     private ActivityResultLauncher<Intent> imagePickerLauncher;
@@ -30,7 +29,7 @@ public class SetupActivity extends AppCompatActivity {
 
         profileImage = findViewById(R.id.profileImage);
         nameInput = findViewById(R.id.nameInput);
-        saveButton = findViewById(R.id.saveButton);
+        Button saveButton = findViewById(R.id.saveButton);
 
         // Setup image picker launcher
         imagePickerLauncher = registerForActivityResult(
@@ -57,13 +56,25 @@ public class SetupActivity extends AppCompatActivity {
 
             if (!name.isEmpty()) {
                 // You can store the name and URI in SharedPreferences or pass to HomeActivity
-                Intent intent = new Intent(SetupActivity.this, HomeActivity.class);
-                intent.putExtra("userName", name);
                 if (selectedImageUri != null) {
-                    intent.putExtra("userImageUri", selectedImageUri.toString());
+                    // Save name and image URI using SharedPreferences
+                    getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                            .edit()
+                            .putString("userName", name)
+                            .putString("userImageUri", selectedImageUri.toString())
+                            .apply();
+
+                    // Navigate to HomeActivity
+                    Intent intent = new Intent(SetupActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    // Optional: error for missing profile image
+                    Toast.makeText(this, "Please select a profile image", Toast.LENGTH_SHORT).show();
+
+                    // Or show a Toast or Snackbar
                 }
-                startActivity(intent);
-                finish();
+
             } else {
                 nameInput.setError("Please enter your name");
             }
