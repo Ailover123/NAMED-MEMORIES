@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "871707675244",
+    "project_id": "namedmemories-ed9272d8",
+    "storage_bucket": "namedmemories-ed9272d8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871707675244:android:f24341eae9fa27c98f6649",
+        "android_client_info": {
+          "package_name": "com.example.namedmemories"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD93MiSK1S_GCXW6LZi_YTTQX3Avs3N5WA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
