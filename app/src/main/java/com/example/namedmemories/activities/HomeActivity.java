@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.firebase.auth.FirebaseAuth;
+import android.content.Intent;
 
 import com.example.namedmemories.R;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,14 @@ public class HomeActivity extends AppCompatActivity {
         ImageView profileImageView = findViewById(R.id.profileImageView);
         Button addMemoryButton = findViewById(R.id.addMemoryButton);
         Button viewTimelineButton = findViewById(R.id.viewTimelineButton);
+
+        Button logoutButton = findViewById(R.id.logoutButton);
+        logoutButton.setOnClickListener(v -> {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        });
+
 
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
         String userName = prefs.getString("userName", "User");

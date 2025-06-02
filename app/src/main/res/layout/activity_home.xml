@@ -60,4 +60,16 @@
         android:backgroundTint="@color/burnt_orange"
         android:text="@string/view_timeline"
         android:textColor="#212121" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_out"
+        android:backgroundTint="@color/burnt_orange"
+        android:textColor="#212121"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/viewTimelineButton"
+        android:layout_marginTop="20dp"/>
+
 </RelativeLayout>
