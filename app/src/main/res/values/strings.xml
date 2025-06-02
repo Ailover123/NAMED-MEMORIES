@@ -6,4 +6,9 @@
     <string name="Username_hint">Enter your name</string>
     <string name="profile_picture">Profile Picture</string>
     <string name="Button_context">Save and Continue</string>
+    <string name="add_memory">Add Memory</string>
+    <string name="profile_pic">Profile Image</string>
+    <string name="username">User Name</string>
+    <string name="view_timeline">View Timeline</string>
+    <string name="welcome">Welcome!</string>
 </resources>

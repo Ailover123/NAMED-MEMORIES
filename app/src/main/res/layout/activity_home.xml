@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -13,16 +12,15 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/ic_person"
         android:scaleType="centerCrop"
-        android:layout_gravity="center"
         app:shapeAppearanceOverlay="@style/CircleImage"
-        android:contentDescription="Profile Image"
+        android:contentDescription="@string/profile_pic"
         android:background="@drawable/circle_bg" />
 
     <TextView
         android:id="@+id/userNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="User Name"
+        android:text="@string/username"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
@@ -30,4 +28,32 @@
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
 
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userNameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/welcome"
+        android:textColor="#A1887F"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/addMemoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_memory"
+        android:layout_below="@id/welcomeTextView"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/viewTimelineButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_timeline"
+        android:layout_below="@id/addMemoryButton"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
