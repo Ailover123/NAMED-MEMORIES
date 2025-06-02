@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="24dp"
-    android:background="@android:color/white">
+    android:background="@color/home_screen_ui">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profileImageView"
@@ -36,24 +36,28 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
         android:text="@string/welcome"
-        android:textColor="#A1887F"
+        android:textColor="#8D6E63"
         android:textSize="20sp" />
 
     <Button
         android:id="@+id/addMemoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_memory"
         android:layout_below="@id/welcomeTextView"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
-        android:layout_centerHorizontal="true" />
+        android:backgroundTint="@color/burnt_orange"
+        android:text="@string/add_memory"
+        android:textColor="#212121" />
 
     <Button
         android:id="@+id/viewTimelineButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/view_timeline"
         android:layout_below="@id/addMemoryButton"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true" />
+        android:backgroundTint="@color/burnt_orange"
+        android:text="@string/view_timeline"
+        android:textColor="#212121" />
 </RelativeLayout>
