@@ -5,7 +5,7 @@
 
     <!-- Required for accessing local and cloud media on Android 13+ -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- For backward compatibility (Android 12 and below) -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
@@ -39,6 +39,15 @@
 
         <activity
             android:name=".activities.HomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NAMEDMEMORIES" />
+
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NAMEDMEMORIES" />
+        <activity
+            android:name=".activities.SignupActivity"
             android:exported="false"
             android:theme="@style/Theme.NAMEDMEMORIES" />
     </application>
