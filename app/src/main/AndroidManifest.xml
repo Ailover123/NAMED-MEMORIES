@@ -50,5 +50,9 @@
             android:name=".activities.SignupActivity"
             android:exported="false"
             android:theme="@style/Theme.NAMEDMEMORIES" />
+        <activity
+            android:name=".activities.MemoryIntroActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NAMEDMEMORIES" />
     </application>
 </manifest>
