@@ -17,4 +17,9 @@
     <string name="password">Password</string>
     <string name="signup_hint">Don\'t have an account? Sign up</string>
     <string name="sign_up">Sign Up</string>
+    <string name="splashscreen_tagline">Preserve Your Precious Moments.</string>
+    <string name="couple_image">Couple Image</string>
+    <string name="get_started">Get Started</string>
+    <string name="Intro_info">Cherish Your Timeless Moments Here</string>
+    <string name="moments_worth_keeping">Moments Worth Keeping</string>
 </resources>

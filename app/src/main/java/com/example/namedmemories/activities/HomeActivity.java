@@ -63,7 +63,17 @@ public class HomeActivity extends AppCompatActivity {
                 Bitmap bitmap = BitmapFactory.decodeFile(userImagePath);
                 profileImageView.setImageBitmap(bitmap);
             } else {
-                profileImageView.setImageResource(R.drawable.ic_person);
+                // If file doesn't exist, clear SharedPreferences and redirect to SetupActivity
+                getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                        .edit()
+                        .remove("userImagePath")
+                        .remove("userName")
+                        .apply();
+                Toast.makeText(this, "Profile image missing. Please set up your profile again.", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, SetupActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
             }
         } else {
             profileImageView.setImageResource(R.drawable.ic_person);
