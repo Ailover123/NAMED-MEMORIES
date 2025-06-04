@@ -6,4 +6,5 @@
     <color name="black">#000000</color>
     <color name="burnt_orange">#FF5A30</color>
     <color name= "home_screen_ui">#F6CBD5</color>
+    <color name="secondary_text_color">#546E7A</color>
 </resources>
