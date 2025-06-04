@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -5,62 +6,172 @@
     android:orientation="vertical"
     android:padding="32dp"
     android:gravity="center"
-    android:background="@color/home_screen_ui">
+    android:background="@drawable/splash_background">
 
-    <TextView
+    <!-- App Logo and Title -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        android:layout_marginBottom="32dp" />
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="40dp"
+        tools:ignore="UseCompoundDrawables">
 
-    <EditText
-        android:id="@+id/editTextEmail"
+        <!-- You can replace this with your actual app_logo drawable -->
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/app_logo"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+
+    <!-- Login/Signup Toggle Buttons -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:autofillHints=""
-        android:backgroundTint="@color/burnt_orange"
-        android:drawableStart="@android:drawable/ic_menu_send"
-        android:drawablePadding="10dp"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:padding="12dp"
-        android:textColorHint="#B71C1C"
-        tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/toggle_background"
+        android:padding="4dp">
 
+        <Button
+            android:id="@+id/buttonLoginTab"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@drawable/login_tab_selected"
+            android:fontFamily="sans-serif"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/buttonSignupTab"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
+            android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="#546E7A" />
+    </LinearLayout>
+
+    <!-- Password Input -->
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:autofillHints=""
-        android:backgroundTint="@color/burnt_orange"
-        android:drawableStart="@android:drawable/ic_lock_lock"
-        android:drawablePadding="10dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/input_background_focused"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:padding="12dp"
-        android:textColorHint="#B71C1C"
-        tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+        android:padding="16dp"
+        android:textColorHint="#546E7A"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif"
+        tools:ignore="Autofill" />
 
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/input_background_focused"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:textColorHint="#546E7A"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif"
+        tools:ignore="Autofill" />
+
+    <!-- Login/Signup Button -->
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/login_button_background"
         android:text="@string/login"
-        android:backgroundTint="@color/burnt_orange"
-        android:textColor="#212121"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-medium"
         tools:ignore="VisualLintButtonSize" />
 
-    <TextView
-        android:id="@+id/textViewSignupLink"
-        android:layout_width="wrap_content"
+    <!-- Footer Links Container -->
+    <LinearLayout
+        android:id="@+id/loginFooterLinks"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/signup_hint"
-        android:textColor="@android:color/black"
-        android:textSize="14sp"
-        android:layout_marginTop="15dp" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/textViewForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif"
+            android:text="@string/forgot_password"
+            android:textColor="#455A64"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/textViewSignupLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif"
+            android:text="@string/don_t_have_an_account"
+            android:textColor="#455A64"
+            android:textSize="14sp"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <!-- Signup Footer Links -->
+    <LinearLayout
+        android:id="@+id/signupFooterLinks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textViewLoginLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_an_account_login"
+            android:textColor="#546E7A"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
 </LinearLayout>
