@@ -1,5 +1,6 @@
 package com.example.namedmemories.activities;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,12 +22,15 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Calendar;
 
 public class SetupActivity extends AppCompatActivity {
 
     private ImageView profileImage;
     private EditText nameInput;
+    private EditText birthdayInput;
     private Uri selectedImageUri;
+    private String selectedBirthday = "";
 
     private ActivityResultLauncher<Intent> imagePickerLauncher;
 
@@ -37,6 +41,7 @@ public class SetupActivity extends AppCompatActivity {
 
         profileImage = findViewById(R.id.profileImage);
         nameInput = findViewById(R.id.nameInput);
+        birthdayInput = findViewById(R.id.birthdayInput);
         Button saveButton = findViewById(R.id.saveButton);
 
         // Setup image picker launcher
@@ -62,29 +67,74 @@ public class SetupActivity extends AppCompatActivity {
             }
         });
 
+        // Birthday input click → show date picker
+        birthdayInput.setOnClickListener(v -> showDatePicker());
+
         // Save button click
         saveButton.setOnClickListener(v -> {
             String name = nameInput.getText().toString().trim();
+            String birthday = birthdayInput.getText().toString().trim();
 
-            if (!name.isEmpty()) {
-                File file = new File(getFilesDir(), "profile_image.jpg");
-                if (file.exists()) {
-                    getSharedPreferences("UserPrefs", MODE_PRIVATE)
-                            .edit()
-                            .putString("userName", name)
-                            .apply();
-
-                    Intent intent = new Intent(SetupActivity.this, HomeActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Toast.makeText(this, "Please select a profile image", Toast.LENGTH_SHORT).show();
-                }
-            } else {
+            if (name.isEmpty()) {
                 nameInput.setError("Please enter your name");
+                return;
             }
+
+            if (birthday.isEmpty()) {
+                birthdayInput.setError("Please select your birthday");
+                return;
+            }
+
+            File file = new File(getFilesDir(), "profile_image.jpg");
+            if (!file.exists()) {
+                Toast.makeText(this, "Please select a profile image", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Save user data
+            getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                    .edit()
+                    .putString("userName", name)
+                    .putString("userBirthday", selectedBirthday)
+                    .apply();
+
+            // Navigate to HomeActivity
+            Intent intent = new Intent(SetupActivity.this, HomeActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
         });
+    }
+
+    private void showDatePicker() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this,
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    // Format the date for display
+                    String formattedDate = String.format("%02d/%02d/%d",
+                            selectedDay, selectedMonth + 1, selectedYear);
+                    birthdayInput.setText(formattedDate);
+
+                    // Store the date in a standard format for storage
+                    selectedBirthday = String.format("%d-%02d-%02d",
+                            selectedYear, selectedMonth + 1, selectedDay);
+                },
+                year, month, day
+        );
+
+        // Set maximum date to today (can't be born in the future)
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+
+        // Set minimum date to 100 years ago (reasonable limit)
+        calendar.add(Calendar.YEAR, -100);
+        datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis());
+
+        datePickerDialog.show();
     }
 
     private void saveProfileImageToInternalStorage(Uri imageUri) {
@@ -108,6 +158,7 @@ public class SetupActivity extends AppCompatActivity {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            Toast.makeText(this, "Error saving image", Toast.LENGTH_SHORT).show();
         }
     }
 
