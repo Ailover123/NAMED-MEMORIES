@@ -1,5 +1,6 @@
 package com.example.namedmemories.activities;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -112,11 +113,11 @@ public class SetupActivity extends AppCompatActivity {
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
+        @SuppressLint("DefaultLocale") DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
                 (view, selectedYear, selectedMonth, selectedDay) -> {
                     // Format the date for display
-                    String formattedDate = String.format("%02d/%02d/%d",
+                    @SuppressLint("DefaultLocale") String formattedDate = String.format("%02d/%02d/%d",
                             selectedDay, selectedMonth + 1, selectedYear);
                     birthdayInput.setText(formattedDate);
 
