@@ -118,14 +118,38 @@
             android:textSize="16sp"
             tools:ignore="VisualLintTextFieldSize" />
 
+        <!-- Progress Bar (initially hidden) -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/birthdayInput"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            android:indeterminateTint="#6C5CE7" />
+
+        <!-- Progress text (initially hidden) -->
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Setting up your profile..."
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
         <!-- Save button -->
         <Button
             android:id="@+id/saveButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/birthdayInput"
+            android:layout_below="@id/progressText"
             android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="32dp"
             android:background="@drawable/purple_button_bg"
             android:text="@string/Button_context"
