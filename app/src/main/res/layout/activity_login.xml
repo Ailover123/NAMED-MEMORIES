@@ -73,13 +73,13 @@
 
     <!-- Password Input -->
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/input_background_focused"
-        android:hint="@string/password"
-        android:inputType="textPassword"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:padding="16dp"
         android:textColorHint="#546E7A"
         android:textColor="@android:color/black"
@@ -88,13 +88,13 @@
 
     <!-- Email Input -->
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/editTextPassword"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/input_background_focused"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
+        android:hint="@string/password"
+        android:inputType="textPassword"
         android:padding="16dp"
         android:textColorHint="#546E7A"
         android:textColor="@android:color/black"
