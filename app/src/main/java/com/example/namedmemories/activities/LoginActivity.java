@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.namedmemories.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -124,17 +126,38 @@ public class LoginActivity extends AppCompatActivity {
                     actionButton.setEnabled(true);
 
                     if (task.isSuccessful()) {
-                        // Check if setup is complete
-                        android.content.SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
-                        String userName = prefs.getString("userName", null);
-                        String userImagePath = prefs.getString("userImagePath", null);
-
-                        if (userName != null && userImagePath != null) {
-                            startActivity(new Intent(this, HomeActivity.class));
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            String uid = user.getUid();
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            db.collection("users").document(uid).get()
+                                    .addOnSuccessListener(documentSnapshot -> {
+                                        if (documentSnapshot.exists() && Boolean.TRUE.equals(documentSnapshot.getBoolean("profileComplete"))) {
+                                            // Go directly to HomeActivity, always using Firestore data
+                                            Intent intent = new Intent(this, HomeActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(intent);
+                                        } else {
+                                            // No profile in Firestore or incomplete, go to setup
+                                            Intent intent = new Intent(this, SetupActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(intent);
+                                        }
+                                        finish();
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(this, "Failed to fetch profile: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent(this, SetupActivity.class);
+                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                        startActivity(intent);
+                                        finish();
+                                    });
                         } else {
-                            startActivity(new Intent(this, SetupActivity.class));
+                            Intent intent = new Intent(this, SetupActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                            finish();
                         }
-                        finish();
                     } else {
                         String errorMsg = "Login failed";
                         if (task.getException() != null) {
@@ -208,3 +231,4 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 }
+
