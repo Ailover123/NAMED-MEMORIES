@@ -26,4 +26,20 @@
     <string name="already_have_an_account_login">Already have an account? Login</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="Birthday_date">Enter your birthday (DD/MM/YYYY)</string>
+    <string name="no_events">No Events</string>
+    <string name="calendar">Calendar</string>
+    <string name="messages">Messages</string>
+    <string name="manage_people">Manage People</string>
+    <string name="memories">Memories</string>
+    <string name="day_streak">Day Streak</string>
+    <string name="people">People</string>
+    <string name="upcoming_events">Upcoming Events</string>
+    <string name="no_upcoming_events">No upcoming events</string>
+    <string name="plan_events_with_friends_in_chat_or_add_them_manually">Plan events with friends in chat or add them manually</string>
+    <string name="add_new_memory">Add New Memory</string>
+    <string name="view_memories">View Memories</string>
+    <string name="direct_messages">Direct Messages</string>
+    <string name="menu">Menu</string>
+    <string name="view_all">View All</string>
+    <string name="welcome_back">Welcome back!</string>
 </resources>
