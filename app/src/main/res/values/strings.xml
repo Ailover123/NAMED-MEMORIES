@@ -42,4 +42,12 @@
     <string name="menu">Menu</string>
     <string name="view_all">View All</string>
     <string name="welcome_back">Welcome back!</string>
+    <string name = "add_event">Add Event</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="_12_00_pm">12:00 PM</string>
+    <string name="event_title">Event Title</string>
+    <string name="enter_event_title">Enter event title</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="selected_time_09_00_am">Selected Time: 09:00 AM</string>
 </resources>
