@@ -11,4 +11,38 @@
     <color name = "green_500">#F44336</color>
     <color name = "red_500">#4CAF50</color>
 
+
+    <!-- Primary Colors - Harmonizing with your gradient -->
+    <color name="colorPrimary">#2563EB</color>     <!-- Blue that matches your gradient -->
+    <color name="colorAccent">#F59E0B</color>      <!-- Warm amber that complements cream -->
+
+    <!-- Calendar Text Colors - Perfect contrast on light background -->
+    <color name="calendar_date_text">#1F2937</color>          <!-- Dark gray for dates -->
+    <color name="calendar_week_text">#4B5563</color>          <!-- Medium gray for week days -->
+    <color name="calendar_selected_date">#2563EB</color>      <!-- Blue for selected -->
+    <color name="calendar_today_text">#2563EB</color>         <!-- Blue for today -->
+    <color name="calendar_disabled_text">#9CA3AF</color>      <!-- Light gray for disabled -->
+
+    <!-- Event Card Colors - Subtle and elegant -->
+    <color name="event_card_background">#FFFFFF</color>       <!-- Pure white cards -->
+    <color name="event_card_background_alt">#F8FAFC</color>   <!-- Very light gray alternative -->
+    <color name="event_title_text">#1F2937</color>           <!-- Dark text for readability -->
+    <color name="event_time_text">#6B7280</color>            <!-- Medium gray for time -->
+
+    <!-- Event Indicator Colors - Vibrant but harmonious -->
+    <color name="event_indicator_blue">#3B82F6</color>       <!-- Bright blue -->
+    <color name="event_indicator_purple">#8B5CF6</color>     <!-- Purple -->
+    <color name="event_indicator_teal">#06B6D4</color>       <!-- Teal -->
+    <color name="event_indicator_orange">#F59E0B</color>     <!-- Orange -->
+    <color name="event_indicator_pink">#EC4899</color>       <!-- Pink -->
+    <color name="event_indicator_green">#10B981</color>      <!-- Green -->
+
+    <!-- UI Element Colors -->
+    <color name="transparent">#00000000</color>
+
+    <!-- Border and Shadow Colors -->
+    <color name="card_border">#E5E7EB</color>                <!-- Light border for cards -->
+    <color name="shadow_color">#1F29371A</color>             <!-- Subtle shadow -->
+
+
 </resources>
