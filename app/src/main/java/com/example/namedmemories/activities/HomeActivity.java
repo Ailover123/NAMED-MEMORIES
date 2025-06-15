@@ -219,10 +219,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private void navigateToCalendar() {
         Toast.makeText(this, "Opening Calendar...", Toast.LENGTH_SHORT).show();
-        // TODO: Navigate to CalendarActivity
-        // Intent intent = new Intent(this, CalendarActivity.class);
-        // startActivity(intent);
+        Intent intent = new Intent(this, CalendarActivity.class);
+        startActivity(intent);
     }
+
 
     private void navigateToMessages() {
         Toast.makeText(this, "Opening Messages...", Toast.LENGTH_SHORT).show();
