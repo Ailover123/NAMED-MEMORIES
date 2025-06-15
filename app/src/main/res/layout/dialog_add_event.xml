@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:importantForAutofill="no"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@drawable/splash_background">
+
+    <EditText
+        android:id="@+id/inputEventTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_event_title"
+        android:inputType="textPersonName"
+        android:maxLines="2"
+        android:minHeight="48dp"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+    <TextView
+        android:id="@+id/selectedTimeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/selected_time_09_00_am"
+        android:textColor="#616161"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/pickTimeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_time"
+        android:layout_marginTop="8dp"
+        tools:ignore="VisualLintButtonSize" />
+</LinearLayout>
