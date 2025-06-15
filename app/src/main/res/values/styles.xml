@@ -1,8 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Circle Image Style -->
     <style name="CircleImage" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Calendar Theme - Optimized for light gradient background -->
+    <style name="CalendarTheme" parent="Theme.AppCompat.Light">
+        <item name="android:colorPrimary">#2563EB</item>
+        <item name="android:colorAccent">#F59E0B</item>
+        <item name="colorPrimary">#2563EB</item>
+        <item name="colorAccent">#F59E0B</item>
+        <item name="android:textColorPrimary">#1F2937</item>
+        <item name="android:textColorSecondary">#6B7280</item>
+    </style>
+
+    <!-- Calendar Date Text Style - Dark text for light background -->
+    <style name="CalendarDateTextStyle">
+        <item name="android:textColor">#1F2937</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Calendar Week Day Text Style -->
+    <style name="CalendarWeekDayTextStyle">
+        <item name="android:textColor">#4B5563</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Calendar Selected Date Style -->
+    <style name="CalendarSelectedDateStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Event Item Card Style -->
+    <style name="EventCardStyle">
+        <item name="android:background">@drawable/event_card_background</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+
+    <!-- Event Title Text Style -->
+    <style name="EventTitleStyle">
+        <item name="android:textColor">#1F2937</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Event Time Text Style -->
+    <style name="EventTimeStyle">
+        <item name="android:textColor">#6B7280</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Floating Action Button Style -->
+    <style name="FabStyle">
+        <item name="backgroundTint">#2563EB</item>
+        <item name="tint">#FFFFFF</item>
+        <item name="elevation">6dp</item>
+        <item name="pressedTranslationZ">9dp</item>
     </style>
 
 </resources>
